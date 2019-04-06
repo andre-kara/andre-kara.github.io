@@ -1,0 +1,124 @@
+$total-lines: 6;
+
+$left-offset: 29px;
+$clip-height: 100px;
+$line-height: $clip-height - 5px;
+
+.words-animate {
+  position: relative;
+  height: calc(100vh - 376px);
+  //overflow: hidden;
+
+  &__list{
+    padding: 15px 0;
+
+    font-family: $IBM;
+    font-weight: 600;
+    font-size: 100px;
+
+    letter-spacing: 0;
+    text-transform: uppercase;
+    // Sort out nasty text fuzz
+    transform: translate3d(0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-kerning: normal;
+    -webkit-text-size-adjust: 100%;
+
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+
+    @include max-to(xxl) {
+      top: -100px;
+      font-size: 64px;
+    }
+
+    @include max-to(lg) {
+      top: 50%;
+      left: -5%;
+      transform: translateY(-100%);
+    }
+
+    @include max-to(sm) {
+      font-size: 32px;
+      top: 50%;
+      left: -20%;
+      transform: translateY(-50%);
+    }
+  }
+
+  & p {
+    height: $clip-height;
+    line-height: $line-height;
+    padding: 0 10px;
+    transition: all 0.4s ease-out;
+    transform: translate3d(0, 0, 0);
+    vertical-align: top;
+    white-space: nowrap;
+    margin-bottom: 10px;
+
+    @include max-to(xxl) {
+      height: 64px;
+      line-height: 64px;
+      margin-bottom: 5px;
+    }
+
+    @include max-to(sm) {
+      height: 32px;
+      line-height: 32px;
+    }
+  }
+}
+
+.words-animate__line {
+  height: $clip-height;
+  overflow: hidden;
+  position: relative;
+
+  @include max-to(xxl) {
+    height: 64px;
+  }
+
+  @include max-to(sm) {
+    height: 32px;
+  }
+
+  // Change the perspective of each alternating line
+  &:nth-child(odd) {
+	transform: skew(60deg, -30deg) scaleY(.66667);
+  }
+  &:nth-child(even) {
+	transform: skew(0deg, -30deg) scaleY(1.33333);
+  }
+
+  // Loop over the total lines and apply a left offset
+  @for $i from 1 through $total-lines+1 {
+	&:nth-child(#{$i}) {
+	  left: $left-offset * $i;
+	}
+  }
+}
+
+
+/*
+** The hover interaction
+*/
+.words-animate_hover:hover {
+  p {
+    line-height: 90px;
+	transform: translate3d(0, -($clip-height), 0);
+
+    @include max-to(xxl) {
+      line-height: 60px;
+      transform: translate3d(0, -(64px), 0);
+    }
+
+    @include max-to(sm) {
+      line-height: 30px;
+      transform: translate3d(0, -(30px), 0);
+    }
+  }
+}

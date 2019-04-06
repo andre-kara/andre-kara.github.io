@@ -1,0 +1,244 @@
+
+.header{
+  position: relative;
+  z-index: 99;
+
+  & .navbar-collapse{
+
+	@include max-to(md) {
+	  padding-top: 54px;
+	}
+  }
+
+  &__wrapp{
+	padding-top: 40px;
+
+	@include max-to(md) {
+	  padding-top: 15px;
+	}
+  }
+
+  &__nav{
+	background-color: transparent;
+	padding: 0;
+
+	@include max-to(lg) {
+	  justify-content: flex-end;
+	}
+
+	@include max-to(md) {
+	 padding: 5px 0;
+	}
+  }
+
+  &__navbar-nav{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+  }
+
+  &__nav li {
+
+	@include max-to(md) {
+	  display: block;
+	  text-align: center;
+	}
+  }
+
+  &__nav li:last-child{
+	display: none;
+  }
+
+  &__nav li:not(:last-child){
+	margin-right: 30px;
+
+	@include max-to(lg) {
+	  margin-right: 12px;
+	}
+
+	@include max-to(md) {
+	  margin-right: 0;
+	}
+  }
+
+  &__nav li a{
+	color: #FFFFFF;
+	font-family: $IBM;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.16px;
+	transition: all 0.24s $expo;
+	padding: 0;
+
+	@include max-to(md) {
+	  font-size: 14px;
+	  line-height: 24px;
+	  display: block;
+	}
+  }
+
+  &__nav li a:hover{
+	color: $c-red;
+	text-decoration: none;
+  }
+
+  &__nav .active a{
+	color: $c-red;
+  }
+}
+
+.info{
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 4px;
+
+  &__contacts{
+	padding-right: 40px;
+
+	@include max-to(lg) {
+	  padding-right: 15px;
+	  flex: 1 0 auto;
+	}
+  }
+
+  &__contacts li,
+  &__contacts a{
+	color: $c-red;
+	font-family: $IBM;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.16px;
+	padding: 0;
+	transition: all 0.24s $expo;
+  }
+
+  &__contacts a:hover{
+	color: #fff;
+	text-decoration: none;
+  }
+
+  &__language{
+	height: 40px;
+	padding-right: 80px;
+
+	&:focus li:last-child,
+	&:hover li:last-child{
+	  height: 20px;
+	  visibility: visible;
+	}
+  }
+
+  &__language li,
+  &__language a{
+	color: #fff;
+	font-family: $IBM;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.16px;
+	padding: 0;
+	transition: all 0.24s $expo;
+	cursor: pointer;
+  }
+
+  &__language li + li{
+	height: 0;
+	visibility: hidden;
+  }
+}
+
+.current-info{
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+  font-family: $IBM;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+
+  @include max-to(sm) {
+	display: none;
+  }
+
+  & p{
+	margin-bottom: 0;
+  }
+
+  &__count{
+	display: block;
+	border-radius: 50%;
+	height: 16px;
+	width: 16px;
+	margin: 2px auto 0;
+	color: #FFFFFF;
+	font-family: $IBM;
+	font-size: 9px;
+	line-height: 16px;
+	background-color: $c-red;
+	text-align: center;
+  }
+}
+
+.header_white{
+
+  & .logo-white{
+	display: none;
+  }
+
+  & .logo-dark{
+	display: block !important;
+  }
+
+  .header__nav li:last-child{
+	display: block;
+  }
+
+  & .header__nav li a{
+	color: $c-black;
+  }
+
+  & .info__contacts a:hover{
+	color: $c-black;
+  }
+
+  & .info__language a{
+	color: $c-black;
+	//display: none;
+  }
+
+  & .current-info{
+	color: $c-black;
+  }
+
+  & .current-info svg #spalsh-copy{
+	fill: $c-black;
+  }
+
+  & .navbar-toggler-icon{
+	background-image: url(../img/menu-black.svg);
+  }
+
+  & .navbar-toggler{
+	border: 1px solid $c-black;
+  }
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:hover{
+
+}
+
+.navbar-toggler{
+  border: 1px solid #EDEDED;
+}
+
+.navbar-toggler-icon{
+  background-image: url(../img/menu.svg);
+}

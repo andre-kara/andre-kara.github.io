@@ -1,0 +1,127 @@
+.btn-custom{
+  color: #FFFFFF;
+  width: 60px;
+  height: 60px;
+
+  font-family: $IBM;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  background-color: $c-red;
+  padding: 0;
+  transition: all 0.3s linear;
+  position: relative;
+  //overflow: hidden;
+
+  & span{
+	white-space: nowrap;
+	padding-right: 70px;
+	padding-left: 20px;
+	line-height: 60px;
+
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	margin: 0 auto;
+	width: 260px;
+	height: 60px;
+	display: block;
+	background: $c-red;
+
+	opacity: 0;
+	transform-origin: 100% 100%;
+	transform: scaleX(0);
+	transition: all 0.14s linear 0.3s;
+  }
+
+  & i{
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	background-color: $c-red;
+	width: 60px;
+	height: 60px;
+  }
+
+  & svg {
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+  }
+
+  &:focus,
+  &:hover{
+
+	& span{
+	  //width: 260px;
+	  transform: scaleX(1);
+	  opacity: 1;
+	}
+  }
+
+  &_vertical span{
+	width: 60px;
+	height: 260px;
+
+	writing-mode: tb-rl;
+	padding: 70px 0 20px;
+	transform-origin: 100% 0;
+	transform: scaleX(1) scaleY(0);
+
+  }
+
+  &_vertical:focus,
+  &_vertical:hover{
+
+
+	& span{
+	  transform: scaleX(1) scaleY(1);
+	  opacity: 1;
+	}
+  }
+}
+
+.btn-next-page{
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: 0.24s $expo;
+
+  &:hover{
+	opacity: 0.8;
+	box-shadow: -1px 1px 0px 1px rgba(255, 255, 255, 0.05);
+  }
+}
+
+.btn-info-custom{
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0;
+  background-color: transparent;
+
+
+  &.active,
+  &:active,
+  &:focus,
+  &:hover{
+	text-decoration: none;
+	background-color: transparent;
+	border-color: transparent;
+	box-shadow: 0 0 0 0 transparent;
+  }
+}

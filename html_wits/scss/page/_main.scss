@@ -1,0 +1,164 @@
+
+.contact-us{
+
+  &__name{
+	display: block;
+	text-transform: uppercase;
+	text-align: right;
+	opacity: 0.2;
+	color: #FFFFFF;
+	font-family: $IBM;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	margin-bottom: 0;
+  }
+
+  &__email{
+	display: block;
+	color: #FFFFFF;
+	font-family: $IBM;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: right;
+	margin-bottom: 30px;
+
+	&:hover{
+	  text-decoration: none;
+	  color: $c-red;
+	}
+  }
+
+  &__btn{
+	display: flex;
+	justify-content: flex-end;
+  }
+}
+
+.words,
+.contact-us,
+.home-footer{
+  position: relative;
+  z-index: 1;
+}
+
+.copyright{
+  text-align: right;
+  color: #FFFFFF;
+  font-family: $IBM;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0;
+}
+
+// PAGE 2
+
+.page-2{
+  height: calc(100vh - 106px);
+  position: relative;
+  z-index: 0;
+  display: none;
+
+  &__content{
+	max-width: 300px;
+	width: 100%;
+	text-align: left;
+	padding-top: 80px;
+
+	@include max-to(md) {
+	  max-width: 540px;
+	  margin: 0 auto;
+	}
+
+	@include max-to(xxl) {
+	  padding-top: 30px;
+	}
+  }
+}
+
+.image-svg{
+
+  & svg{
+	width: 640px;
+	height: 100%;
+
+	@media only screen and(min-width: 1920px){
+	  width: 1366px;
+	}
+
+	@include max-to(xxl) {
+	  width: 1024px;
+	}
+  }
+
+  &_position{
+	position: absolute;
+	top: -106px;
+	left: -20%;
+	z-index: 1;
+	width: 610px;
+	height: 100vh;
+	z-index: -1;
+
+	@media only screen and(min-width: 1920px){
+	  left: -100%;
+	}
+
+
+	@include max-to(xxl) {
+	  left: -50%;
+	}
+
+	@include max-to(lg) {
+	  left: -70%;
+	}
+
+	@include max-to(md) {
+	  top: -92px;
+	  left: -100%;
+	}
+
+	@include max-to(sm) {
+	  display: none;
+	}
+  }
+}
+
+.oval-big{
+  width: 68px;
+  height: 68px;
+  background-color: #fff;
+  border-radius: 50%;
+
+  position: relative;
+}
+
+.oval-small {
+  width: 41px;
+  height: 41px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid rgba(29,29,29,0.2);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#oval {
+
+  #shape {
+	fill: none;
+	stroke: $c-red;
+	stroke-width: 2;
+	transition: all 4s ease-in-out;
+	transform: rotate(-90deg);
+	transform-origin: 50%;
+
+	stroke-dasharray: 100;
+	stroke-dashoffset: 100;
+  }
+}

@@ -1,0 +1,130 @@
+@import 'veriabel';
+
+
+@include fontface($IBM, IBMPlexSans-Thin, normal, normal);
+@include fontface($IBM, IBMPlexSans-ThinItalic, normal, italic);
+
+@include fontface($IBM, IBMPlexSans-Light, 300, normal);
+@include fontface($IBM, IBMPlexSans-LightItalic, 300, italic);
+
+@include fontface($IBM, IBMPlexSans-Regular, 400, normal);
+@include fontface($IBM, IBMPlexSans-Italic, 400, italic);
+
+@include fontface($IBM, IBMPlexSans-Medium, 500, normal);
+@include fontface($IBM, IBMPlexSans-MediumItalic, 500, italic);
+
+@include fontface($IBM, IBMPlexSans-SemiBold, 600, normal);
+@include fontface($IBM, IBMPlexSans-SemiBold, 600, italic);
+
+@include fontface($IBM, IBMPlexSans-Bold, 700, normal);
+@include fontface($IBM, IBMPlexSans-BoldItalic, 700, italic);
+
+@include fontface($IBM, IBMPlexSans-ExtraLight, normal, normal);
+@include fontface($IBM, IBMPlexSans-ExtraLightItalic, normal, italic);
+
+* {
+	box-sizing : border-box;
+	margin     : 0;
+	padding    : 0;
+
+	outline    : none !important;
+}
+
+body {
+  display         : flex;
+  overflow-x      : hidden;
+  flex-direction  : column;
+
+  width           : 100%;
+  min-height      : 100vh;
+
+  color           : #fff;
+  font-family 	  : $IBM;
+
+  justify-content : space-between;
+}
+
+.body{
+  background-color: $c-black;
+
+  &_white{
+	background-color: #EDEDED;
+
+	& .overlay-hidden{
+	  overflow: visible;
+	}
+  }
+}
+
+img {
+	width      : 100%;
+	height     : 100%;
+
+	object-fit : cover;
+}
+
+a,
+button {
+	cursor          : pointer;
+	text-decoration : none;
+	outline: none;
+
+	color           : inherit;
+}
+
+button {
+	display     : inline-block;
+
+	border      : 0;
+
+	font-family : inherit;
+}
+
+ul, ol {
+	margin          : 0;
+	padding         : 0;
+
+	list-style-type : none;
+}
+
+input,
+textarea{
+	//-moz-appearance: none;
+	//-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+	border: 0;
+	background-color: #ffffff;
+}
+
+::selection {
+	color      : #fff;
+	background : $c-red;
+}
+
+.section-title{
+  color: $c-black;
+  font-family: $IBM;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 40px;
+
+  &_margin{
+	margin-bottom: 20px;
+  }
+}
+
+.section-text{
+  color: $c-black;
+  font-family: $IBM;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.overlay-hidden{
+  overflow: hidden;
+}

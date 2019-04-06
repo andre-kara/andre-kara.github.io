@@ -1,0 +1,47 @@
+.popover{
+  background-color: rgba(255,255,255,0.1);
+  border-color: rgba(29, 29, 29, 0.2);
+}
+
+.popover-body{
+  color: $c-red;
+  font-family: $IBM;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  @include max-to(lg) {
+	font-size: 10px;
+	line-height: 1.124;
+  }
+}
+
+.bs-popover-auto[x-placement^=right]>.arrow::after,
+.bs-popover-right>.arrow::after{
+  border-right-color: rgba(29, 29, 29, 0.2);
+}
+
+.bs-popover-auto[x-placement^=right] > .arrow::after,
+.bs-popover-right > .arrow::after {
+  border-right-color: #EDEDED;
+}
+.popover-custom{
+  min-width: 410px;
+
+  @include max-to(xxl) {
+	min-width: 340px;
+  }
+
+  @include max-to(md) {
+	min-width: 240px;
+	max-width: 240px;
+	width: 100%;
+  }
+
+  @include max-to(sm) {
+	min-width: 200px;
+	max-width: 200px;
+	width: 100%;
+  }
+}
